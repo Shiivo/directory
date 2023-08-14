@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        li:hover {
+            background-color: #f9f9f9;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .logout-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+ <h1>Admin Dashboard</h1>
+    <a href="{{ url_for('admin_logout') }}" class="logout-button">Logout</a>
+
+    <div class="search-bar">
+    <form method="get" action="{{ url_for('admin_dashboard') }}">
+        <input type="text" name="search" placeholder="Search businesses...">
+        <select id="sort" name="sort">
+            <option value="business_name">Business Name</option>
+            <option value="sponsorship_budget_low">Sponsorship Budget (High to Low)</option>
+            <option value="sponsorship_budget_high">Sponsorship Budget (Low to High)</option>
+        </select>
+        <input type="submit" value="Search">
+    </form>
+
+    <h2>Registered Businesses</h2>
+    <ul>
+        {% for business in businesses %}
+        <li>
+            <strong>{{ business.business_name }}</strong><br>
+            Phone: {{ business.phone_number }}<br>
+            Address: {{ business.address }}<br>
+            Budget: {{ business.sponsorship_budget }}<br>
+            Website: <a href="{{ business.website }}">{{ business.website }}</a><br>
+            Bio: {{ business.bio }}
+        </li>
+        <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
