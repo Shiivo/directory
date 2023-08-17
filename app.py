@@ -41,9 +41,9 @@ with app.app_context():
 # Homepage - Redirect to login page
 @app.route('/')
 def index():
-    return redirect('/home')
+    return redirect('/company')
 
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/company', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         # Process the form data
