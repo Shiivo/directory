@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Page</title>
+    <style>
+        body {
+            background-image: url('https://www.pedarecc.sa.edu.au/wp-content/uploads/2022/05/P1002187-scaled-2048x1152.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #1035AC; /* Text color */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        /* Style the form elements */
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #007BFF; /* Button color */
+            color: #FFFFFF; /* Text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey Page</h1>
+    <div class="container">
+        <p>Welcome to our survey page!</p>
+
+        <form action="submit_survey.php" method="post">
+            <p>Question 1 - What sparks your interest in VEX Judging?</p>
+            <input type="text" name="answer1" placeholder="Your answer here"><br>
+
+            <p>Question 2 - Would you like to be contacted for more information about a sponsorship
+                opportunity with our extracurricular VEX program?</p>
+            <input type="text" name="answer2" placeholder="Your answer here"><br>
+
+            <p>Question 3 - Do you want your business to be displayed on a robot for VEX as a sponsor?</p>
+            <input type="text" name="answer5" placeholder="Your answer here"><br>
+
+
+            <p>Note: Once submitted, your survey response will be read by the administrator, where further contact will be made if you stated that you want to volunteer or sponsor.</p>
+
+            <input type="submit" value="Submit Survey">
+        </form>
+
+        <a href="/">Back to Home</a>
+    </div>
